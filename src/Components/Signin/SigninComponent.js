@@ -87,7 +87,7 @@ function SignInComponent() {
                       */}
 
                     <Col className="signinCol">
-                    <Card className="cardClass">
+                    <Card  className="cardClass">
                     <h3 className="Display-4 text-center mt-5 mb-4"> Sign In </h3>
                         <Card.Body className="formControl">
                             

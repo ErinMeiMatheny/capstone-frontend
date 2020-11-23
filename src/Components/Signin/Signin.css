@@ -78,7 +78,11 @@
 .signinCol{
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    justify-content: left;
+    min-width: 500px !important;
+   
+    width: 800px;
+    height: 60%;
     
 }
 
@@ -88,8 +92,10 @@
 .cardClass{
     display: flex;
     justify-content: left;
-    width: 70%;
-    height: 50%;
+    min-width: 300px;
+    width: auto !important;
+    width: 800px;
+    height: 60%;
 }
 
 /* row */

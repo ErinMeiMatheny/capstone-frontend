@@ -77,10 +77,9 @@
 
 .signinCol{
     display: flex;
-    flex-direction: column;
-    height: 90vh;
-    
+    height: 10vh;
 }
+
 
 
 

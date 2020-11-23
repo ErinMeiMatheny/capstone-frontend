@@ -85,7 +85,7 @@ function SignupComponent() {
                       */}
 
                     <Col className="signinCol">
-                        <Card className="mt-5 w-100">
+                        <Card className="mt-5 w-100 innerCard">
                         <h2 className="text-center mb-4">Sign Up</h2>
                             <Card.Body>
                                
