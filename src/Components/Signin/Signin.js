@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Container, Card, Button, Form, Alert } from "react-bootstrap";
+import { Container, Card, Button, Form, Alert, Jumbotron } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
 import { Link, useHistory} from "react-router-dom"
 import "./Signin.css"
@@ -31,7 +31,8 @@ function Signin() {
 
   return (
     <React.Fragment>
-      <Container>
+      <Jumbotron className="jumbo-main">
+      <Container className="contain">
       <Card className="cardClass mt-5">
        
         <Card.Body className="formControl">
@@ -57,6 +58,7 @@ function Signin() {
       </Card>
       
       </Container>
+      </Jumbotron>
     </React.Fragment>
   );
 }
