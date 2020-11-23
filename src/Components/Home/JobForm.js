@@ -24,7 +24,7 @@ function JobForm() {
 
             const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
 
-            const results = await axios('http://localhost:8000/job-apps',
+            const results = await axios('http://localhost:5432/job-apps',
                 {
 
                     headers: {
@@ -41,7 +41,7 @@ function JobForm() {
     const employerResponse = async (id) => {
 
         const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
-        const eResponse = await axios(`http://localhost:8000/employer-response/${id}`,
+        const eResponse = await axios(`http://localhost:5432/employer-response/${id}`,
             {
                 method: "PUT",
                 headers: {

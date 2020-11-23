@@ -1,7 +1,9 @@
 import "./App.css";
 //Components
 import Signin from "./Components/Signin/Signin"
+import SignInComponent from "./Components/Signin/SigninComponent"
 import Signup from "./Components/Signup/Signup";
+import SignupComponent from "./Components/Signup/SignupComponent"
 import Indeed from "./Components/Indeed"
 import Home from "./Components/Home/Home"
 import HiddenRoute from "./Components/HiddenRoute"
@@ -28,8 +30,8 @@ function App() {
               
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/signin" component={Signin} />
+              <Route path="/signup" component={SignupComponent} />
+              <Route path="/signin" component={SignInComponent} />
               <Route path="/searchjobs" component={Indeed} />
 
               <HiddenRoute path="/home" component={Home} />
