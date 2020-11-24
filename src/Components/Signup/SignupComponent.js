@@ -14,7 +14,7 @@ function SignupComponent() {
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
-    function handleSubmit(e) {
+   async function handleSubmit(e) {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -24,7 +24,7 @@ function SignupComponent() {
         try {
             setError("")
             setLoading(true)
-            signup(emailRef.current.value, passwordRef.current.value)
+          await signup(emailRef.current.value, passwordRef.current.value)
             history.push("/home")
         } catch {
             setError("Failed to create an account")
