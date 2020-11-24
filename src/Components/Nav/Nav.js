@@ -35,13 +35,20 @@ function Nav() {
               </div>
             </Link>
         {currentUser ? (
+          <>
           <Link to="/" onClick={() => signOut()} className="nav-link">
             <div className="nav-option">
               <span className="nav-option-line-one">Log out</span>
 
             </div>
           </Link>
-          
+                    <Link to="/home" className="nav-link">
+                    <div className="nav-option">
+                      <span className="nav-option-line-one">Profile</span>
+        
+                    </div>
+                  </Link>
+          </>
         ) : (
           <>
 
