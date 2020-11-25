@@ -1,7 +1,7 @@
 import React from 'react'
 import "./LandingPage.css"
 import "./LandingRowOne.css"
-import { Jumbotron, Container, Card, Button, Form, Alert, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import check from "../../assets/check.png"
 
 

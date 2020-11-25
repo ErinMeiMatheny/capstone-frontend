@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Container, Card, Col, CardColumns, Row, Button, Alert } from "react-bootstrap"
+import { Container, Card, Col, Row, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../Context/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import JobForm from './JobForm';
 
 

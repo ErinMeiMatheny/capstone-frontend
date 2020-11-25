@@ -1,8 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import { Jumbotron, Container, Card, Button, Form, Alert, Row } from "react-bootstrap";
-import table from "../../assets/table.png"
-
+import { Jumbotron, Container } from "react-bootstrap";
 
 
 function Footer() {
