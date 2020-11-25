@@ -141,7 +141,7 @@ function JobForm() {
                                         style={{ width: "16rem" }}
                                         className="mb-2"
                                     >
-                                        <Card.Body >
+                                        <Card.Body>
                                             <Card.Header>Job Application #{job.id} </Card.Header>
                                             <Card.Title>{job.job_title}</Card.Title>
                                             <Card.Text>
