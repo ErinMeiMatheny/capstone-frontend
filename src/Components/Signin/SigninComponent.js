@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Container, Card, Button, Form, Alert, Jumbotron, Row, Col } from "react-bootstrap";
+import { Container, Card, Button, Form, Alert, Row, Col } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
 import { Link, useHistory } from "react-router-dom"
-import check from "../../assets/check.png"
+// import check from "../../assets/check.png"
 import "./Signin.css"
 
 

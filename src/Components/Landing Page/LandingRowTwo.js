@@ -1,6 +1,5 @@
 import React from 'react'
 import "./LandingPage.css"
-import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 
 function LandingRowTwo() {
     return (

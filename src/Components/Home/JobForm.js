@@ -5,17 +5,16 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import ToggleButton from 'react-bootstrap/ToggleButton';
 import { auth } from "../../firebase";
 import axios from "axios"
-import { useAuth } from "../../Context/AuthContext"
+// import { useAuth } from "../../Context/AuthContext"
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 
 
 
 function JobForm() {
-    const { currentUser } = useAuth()
+    // const { currentUser } = useAuth()
 
     const [jobs, setJobs] = useState([])
 
