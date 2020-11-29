@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import "./LandingPage.css"
 import LandingRowOne from "./LandingRowOne"
+import LandingRowTwo from "./LandingRowTwo"
 import Footer from "../Footer/Footer"
 
 function LandingPage() {
@@ -35,8 +36,7 @@ function LandingPage() {
 
         
 <LandingRowOne />
-<LandingRowOne />
-<LandingRowOne />
+<LandingRowTwo />
 <Footer />
 
 

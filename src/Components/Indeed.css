@@ -1,0 +1,50 @@
+.searchContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+
+
+.searchBackgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+    z-index: -1;
+    background-image: url("../assets/interview.png");
+    background-color: white;
+  }
+
+  .formSearch {
+      font-size: 2em;
+      
+  }
+
+  .searchRow{
+      display: grid;
+      flex-direction: column;
+  }
+
+  /* .searchRow{
+      display: flex;
+      align-content: flex-start;
+  } */
+
+  .searchCol{
+      position: sticky;
+      top: 0;
+      left: 0;
+     
+      
+    
+  }
+
+  
+  
