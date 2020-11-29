@@ -51,6 +51,22 @@
 }
 
 
+.searchBackgroundImage{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  z-index: -2;
+  background-image: url("../../assets/interview.png");
+  background-color: white;
+}
+
 
 /*--- iOS Fixed Background Image --*/
 .fixed-background {
@@ -263,9 +279,9 @@ btn-lg {
   flex-wrap: wrap;
 } 
 
-.container-fluid {
+/* .container-fluid {
   background-color: rgba(0,0,0, .1);
-}
+} */
 
 .spanTrackingLink{
   display: inline-block;
