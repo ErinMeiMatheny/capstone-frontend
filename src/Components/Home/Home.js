@@ -29,35 +29,40 @@ export default function Home() {
 
 
     return (
-    <div className="home-page">
-            
+        <div className="home-page">
+
             <div className="background1" />
             <div className="background2" />
-        
-        <Container fluid className="homeContainer">
-        
-            <Card>
-                <Card.Body>
-                    <h3 className="text-center"> Welcome Back {currentUser.email}! </h3>
-                    {error && <Alert varient="danger">{error}</Alert>}
-                    <div className="text-center">
-                        <Button varient="link" onClick={handleLogout}>Log out</Button>
-                    </div>
-                </Card.Body>
-            </Card>
-            <br></br>
-            <JobForm></JobForm>
-           
-            <Row className="homeRow">
-            
-                
-            </Row>
 
-        </Container>
+            <Container className="homeContainer">
 
-        
+                <Row>
+                    <Card>
+                        <Card.Body>
+                            <h3 className="text-center"> Welcome Back {currentUser.email}! </h3>
+                            {error && <Alert varient="danger">{error}</Alert>}
+                            <div className="text-center">
+                                <Button varient="link" onClick={handleLogout}>Log out</Button>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </Row>
 
-    </div>
+                <br></br>
+
+
+                <JobForm></JobForm>
+
+                <Row className="homeRow">
+
+
+                </Row>
+
+            </Container>
+
+
+
+        </div>
 
 
     )

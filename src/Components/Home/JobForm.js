@@ -11,7 +11,7 @@ import axios from "axios"
 // import { useAuth } from "../../Context/AuthContext"
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-import "./JobForm.css"
+import "./JobForm.css";
 
 
 
@@ -128,96 +128,98 @@ function JobForm() {
 
     return ["Light"].map((variant, idx) => (
 
-        
-        <Container fluid className="jobForm-Container">
+
+        <Row>
             {/* <Row className="jobForm-Row"> */}
-                <Col className="col-cards">
-                {
-                    jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
-                        if (job.is_deleted !== true)
+            <Col className="col-cards col-8">
+                <Row>
+                    {
+                        jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
+                            if (job.is_deleted !== true)
+                                return (
+                                    <Col>
+                                        <Card className="col-2"
+                                            bg={variant.toLowerCase()}
+                                            key={idx}
+                                            text={variant.toLowerCase() === "light" ? "dark" : "white"}
+                                            style={{ width: "16rem" }}
+                                            className="mb-2"
+                                        >
+                                            <Card.Body>
+                                                <Card.Header>Job Application #{job.id} </Card.Header>
+                                                <Card.Title>{job.job_title}</Card.Title>
+                                                <Card.Text>
+                                                    {job.company_name}
+                                                    <br></br>
+                                                    {job.date_applied}
+                                                </Card.Text>
+                                                <DropdownButton id="dropdown-item-button" title="Options">
+                                                    <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autoComplete="off">Response?</Dropdown.Item>
+                                                    <Dropdown.Item as="button" onClick={() => { deleteJob(job.id) }}>Delete</Dropdown.Item>
 
-                            return (
-                                <Col>
-                                    <Card
-                                        bg={variant.toLowerCase()}
-                                        key={idx}
-                                        text={variant.toLowerCase() === "light" ? "dark" : "white"}
-                                        style={{ width: "16rem" }}
-                                        className="mb-2"
-                                    >
-                                        <Card.Body>
-                                            <Card.Header>Job Application #{job.id} </Card.Header>
-                                            <Card.Title>{job.job_title}</Card.Title>
-                                            <Card.Text>
-                                                {job.company_name}
-                                                <br></br>
-                                                {job.date_applied}
-                                            </Card.Text>
-                                            <DropdownButton id="dropdown-item-button" title="Options">
-                                                <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autoComplete="off">Response?</Dropdown.Item>
-                                                <Dropdown.Item as="button" onClick={() => { deleteJob(job.id) }}>Delete</Dropdown.Item>
+                                                </DropdownButton>
 
-                                            </DropdownButton>
-                                            
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            )
-                    })
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                )
+                        })
 
-                }
-                </Col>
-                <Col>
-                                <Form className="m-3" onSubmit={handleSubmit}>
-                                    <Form.Group as={Row} >
-                                        <Form.Label column sm={2}>
-                                            Company Name
+                    }
+                </Row>
+            </Col>
+
+            <Col className="col-4">
+                <Form className="m-3" onSubmit={handleSubmit}>
+                    <Form.Group as={Row} >
+                        <Form.Label column sm={2}>
+                            Company Name
                             </Form.Label>
-                                        <Col sm={10}>
-                                            <Form.Control onChange={handleChange} type="text" placeholder="Company Name" id="company" required />
-                                        </Col>
-                                    </Form.Group>
+                        <Col sm={10}>
+                            <Form.Control onChange={handleChange} type="text" placeholder="Company Name" id="company" required />
+                        </Col>
+                    </Form.Group>
 
-                                    <Form.Group as={Row} >
-                                        <Form.Label column sm={2}>
-                                            Job Title
+                    <Form.Group as={Row} >
+                        <Form.Label column sm={2}>
+                            Job Title
                             </Form.Label>
-                                        <Col sm={10}>
-                                            <Form.Control onChange={handleChange} type="text" placeholder="Job Title" id="jobtitle" required />
-                                        </Col>
-                                    </Form.Group>
+                        <Col sm={10}>
+                            <Form.Control onChange={handleChange} type="text" placeholder="Job Title" id="jobtitle" required />
+                        </Col>
+                    </Form.Group>
 
-                                    <Form.Group as={Row}>
-                                        <Form.Label column sm={2}>
-                                            Date Applied
+                    <Form.Group as={Row}>
+                        <Form.Label column sm={2}>
+                            Date Applied
                             </Form.Label>
-                                        <Col sm={10}>
-                                            <Form.Control onChange={handleChange} type="date" placeholder="xxxx-xx-xx" id="date" required />
-                                        </Col>
-                                    </Form.Group>
+                        <Col sm={10}>
+                            <Form.Control onChange={handleChange} type="date" placeholder="xxxx-xx-xx" id="date" required />
+                        </Col>
+                    </Form.Group>
 
-                                    <Form.Group as={Row} >
-                                        <Form.Label column sm={2}>
-                                            City
+                    <Form.Group as={Row} >
+                        <Form.Label column sm={2}>
+                            City
                             </Form.Label>
-                                        <Col sm={10}>
-                                            <Form.Control onChange={handleChange} type="text" placeholder="City" id="city" required />
-                                        </Col>
-                                    </Form.Group>
+                        <Col sm={10}>
+                            <Form.Control onChange={handleChange} type="text" placeholder="City" id="city" required />
+                        </Col>
+                    </Form.Group>
 
 
-                                    <Form.Group as={Row}>
-                                        <Col sm={{ span: 10, offset: 2 }}>
-                                            <Button type="submit" >Add Job</Button>
-                                        </Col>
-                                    </Form.Group>
-                                </Form>
-                    </Col>
-             
-                
-        
-             {/* </Row>       */}
-        </Container>
+                    <Form.Group as={Row}>
+                        <Col sm={{ span: 10, offset: 2 }}>
+                            <Button type="submit" >Add Job</Button>
+                        </Col>
+                    </Form.Group>
+                </Form>
+            </Col>
+
+
+
+            {/* </Row>       */}
+        </Row>
     ))
 
 }
