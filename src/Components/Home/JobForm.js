@@ -121,10 +121,43 @@ function JobForm() {
         console.log(sendJob.data)
     }
 
-
-
-    function handleChange(event) {
+function handleChange(event) {
     };
+
+
+    
+//function for timer on cards
+function replyTimer(dateApplied, cardId) {
+
+    // Set the date we're counting down to
+    var countDownDate = new Date(dateApplied).getTime() + 777600000;
+
+    var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        //  Time calculations for days
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        // render how many days left till follow up. If after 7 days since application it will render "Time to follow up with this job!"
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById(cardId).innerHTML = "Time to follow up with this job!";
+        } else {
+            clearInterval(x);
+            document.getElementById(cardId).innerHTML = "Follow up in " + days + " day(s).";
+        }
+    });
+}
+
+
+
+
+
+
 
     return ["Light"].map((variant, idx) => (
 
@@ -136,8 +169,9 @@ function JobForm() {
                     {
                         jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
                             if (job.is_deleted !== true)
+                            
                                 return (
-                                    <Col>
+                                    <Col onLoad={replyTimer(job.date_applied, job.id)}>
                                         <Card className="col-2"
                                             bg={variant.toLowerCase()}
                                             key={idx}
@@ -152,6 +186,8 @@ function JobForm() {
                                                     {job.company_name}
                                                     <br></br>
                                                     {job.date_applied}
+                                                    <br></br>
+                                                    <p id={job.id}></p>
                                                 </Card.Text>
                                                 <DropdownButton id="dropdown-item-button" title="Options">
                                                     <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autoComplete="off">Response?</Dropdown.Item>
