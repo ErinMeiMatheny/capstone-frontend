@@ -34,8 +34,8 @@ export default function Home() {
             <div className="background1" />
             <div className="background2" />
         
-        <Container fluid className="homeContainer">
-        
+     <Container className="homeContainer">
+        <Row>
             <Card>
                 <Card.Body>
                     <h3 className="text-center"> Welcome Back {currentUser.email}! </h3>
@@ -45,9 +45,13 @@ export default function Home() {
                     </div>
                 </Card.Body>
             </Card>
+        </Row>
+
             <br></br>
+
+
             <JobForm></JobForm>
-           
+            
             <Row className="homeRow">
             
                 

@@ -11,7 +11,7 @@ import axios from "axios"
 // import { useAuth } from "../../Context/AuthContext"
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-import "./JobForm.css"
+import "./JobForm.css";
 
 
 
@@ -129,16 +129,18 @@ function JobForm() {
     return ["Light"].map((variant, idx) => (
 
         
-        <Container fluid className="jobForm-Container">
+        <Row>
             {/* <Row className="jobForm-Row"> */}
-                <Col className="col-cards">
+                <Col className="col-cards col-8">
+                <Row>
                 {
                     jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
                         if (job.is_deleted !== true)
 
                             return (
-                                <Col>
-                                    <Card
+                             
+                                
+                                    <Card className="col-2"
                                         bg={variant.toLowerCase()}
                                         key={idx}
                                         text={variant.toLowerCase() === "light" ? "dark" : "white"}
@@ -161,13 +163,15 @@ function JobForm() {
                                             
                                         </Card.Body>
                                     </Card>
-                                </Col>
+                                
                             )
                     })
 
                 }
-                </Col>
-                <Col>
+                </Row>
+            </Col>
+
+                <Col className="col-4">
                                 <Form className="m-3" onSubmit={handleSubmit}>
                                     <Form.Group as={Row} >
                                         <Form.Label column sm={2}>
@@ -217,7 +221,7 @@ function JobForm() {
                 
         
              {/* </Row>       */}
-        </Container>
+        </Row>
     ))
 
 }
