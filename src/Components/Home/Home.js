@@ -35,6 +35,7 @@ export default function Home() {
             <div className="background2" />
         
      <Container className="homeContainer">
+         
         <Row>
             <Card>
                 <Card.Body>

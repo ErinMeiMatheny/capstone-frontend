@@ -138,9 +138,8 @@ function JobForm() {
                         if (job.is_deleted !== true)
 
                             return (
-                             
-                                
-                                    <Card className="col-2"
+                                <Col>
+                                    <Card
                                         bg={variant.toLowerCase()}
                                         key={idx}
                                         text={variant.toLowerCase() === "light" ? "dark" : "white"}
@@ -163,7 +162,7 @@ function JobForm() {
                                             
                                         </Card.Body>
                                     </Card>
-                                
+                             </Col>
                             )
                     })
 
