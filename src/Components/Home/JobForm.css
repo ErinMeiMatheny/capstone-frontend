@@ -30,14 +30,14 @@ body {
 
   .jobForm-Container{
       display: flex;
-      flex-direction: row;
+      flex-direction: row; 
      
      
 
-  }
+  } 
   .jobForm-Row{
       display: flex;
-      flex-direction: row;
+      /* flex-direction: row;  */
       flex-wrap: wrap;
      
   }
@@ -46,7 +46,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     
+} 
+
+.response {
+    font-weight: bold;
 }
+
 
 .response {
     font-weight: bold;

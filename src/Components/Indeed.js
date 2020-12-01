@@ -23,6 +23,7 @@ export default function Indeed() {
 
 
         if (!searchJob.data[0]) {
+            setJobs([])
             setError("no results for search")
             console.log("no results for search")
         } else {
