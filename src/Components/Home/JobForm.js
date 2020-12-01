@@ -121,37 +121,37 @@ function JobForm() {
         console.log(sendJob.data)
     }
 
-function handleChange(event) {
+    function handleChange(event) {
     };
 
 
-    
-//function for timer on cards
-function replyTimer(dateApplied, cardId) {
 
-    // Set the date we're counting down to
-    var countDownDate = new Date(dateApplied).getTime() + 777600000;
+    //function for timer on cards
+    function replyTimer(dateApplied, cardId) {
 
-    var x = setInterval(function () {
-        // Get today's date and time
-        var now = new Date().getTime();
+        // Set the date we're counting down to
+        var countDownDate = new Date(dateApplied).getTime() + 777600000;
 
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        var x = setInterval(function () {
+            // Get today's date and time
+            var now = new Date().getTime();
 
-        //  Time calculations for days
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
 
-        // render how many days left till follow up. If after 7 days since application it will render "Time to follow up with this job!"
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById(cardId).innerHTML = "Time to follow up with this job!";
-        } else {
-            clearInterval(x);
-            document.getElementById(cardId).innerHTML = "Follow up in " + days + " day(s).";
-        }
-    });
-}
+            //  Time calculations for days
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // render how many days left till follow up. If after 7 days since application it will render "Time to follow up with this job!"
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById(cardId).innerHTML = "Time to follow up with this job!";
+            } else {
+                clearInterval(x);
+                document.getElementById(cardId).innerHTML = "Follow up in " + days + " day(s).";
+            }
+        });
+    }
 
 
 
@@ -168,8 +168,8 @@ function replyTimer(dateApplied, cardId) {
                 <Row>
                     {
                         jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
-                            if (job.is_deleted !== true)
-                            
+                            if (job.is_deleted !== true && job.company_responded !== true)
+
                                 return (
                                     <Col onLoad={replyTimer(job.date_applied, job.id)}>
                                         <Card className="col-2"
@@ -179,11 +179,14 @@ function replyTimer(dateApplied, cardId) {
                                             style={{ width: "16rem" }}
                                             className="mb-2"
                                         >
-                                            <Card.Body>
+                                            <Card.Body className="card-regular">
                                                 <Card.Header>Job Application #{job.id} </Card.Header>
+                                                <br></br>
                                                 <Card.Title>{job.job_title}</Card.Title>
                                                 <Card.Text>
                                                     {job.company_name}
+                                                    <br></br>
+                                                    {job.city}
                                                     <br></br>
                                                     {job.date_applied}
                                                     <br></br>
@@ -194,13 +197,48 @@ function replyTimer(dateApplied, cardId) {
                                                     <Dropdown.Item as="button" onClick={() => { deleteJob(job.id) }}>Delete</Dropdown.Item>
 
                                                 </DropdownButton>
+                                                <br></br>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                )
 
+                            //renders card with "Company responded!" and turns it a color when company responded is true 
+                            if (job.is_deleted !== true && job.company_responded !== false)
+                                return (
+                                    <Col onLoad={replyTimer(job.date_applied, job.id)}>
+                                        <Card className="col-2"
+                                            bg={variant.toLowerCase()}
+                                            key={idx}
+                                            text={variant.toLowerCase() === "light" ? "dark" : "white"}
+                                            style={{ width: "16rem" }}
+                                            className="mb-2"
+                                        >
+                                            <Card.Body className="card-response" style={{ backgroundColor: "rgba(71,229,188, 0.50)" }}>
+                                                <Card.Header>Job Application #{job.id} </Card.Header>
+                                                <br></br>
+                                                <Card.Title>{job.job_title}</Card.Title>
+                                                <Card.Text>
+                                                    {job.company_name}
+                                                    <br></br>
+                                                    {job.city}
+                                                    <br></br>
+                                                    {job.date_applied}
+                                                    <br></br>
+                                                    <p id={job.id}></p>
+                                                    <p className="response">Company Responded!</p>
+                                                </Card.Text>
+                                                <DropdownButton id="dropdown-item-button" title="Options">
+                                                    <Dropdown.Item as="button" onClick={() => { employerResponse(job.id) }} data-toggle="button" aria-pressed="false" autoComplete="off">Response?</Dropdown.Item>
+                                                    <Dropdown.Item as="button" onClick={() => { deleteJob(job.id) }}>Delete</Dropdown.Item>
+
+                                                </DropdownButton>
+                                                <br></br>
                                             </Card.Body>
                                         </Card>
                                     </Col>
                                 )
                         })
-
                     }
                 </Row>
             </Col>
