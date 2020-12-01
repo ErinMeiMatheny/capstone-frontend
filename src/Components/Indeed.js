@@ -94,7 +94,7 @@ export default function Indeed() {
                                 <Card.Text>
                                     {job.location}
                                 </Card.Text>
-                                <a href={job.company_url}><Button variant="primary">Apply Online</Button> </a>
+                                <a href={job.company_url} target="_blank"><Button variant="primary">Apply Online</Button> </a>
                             </Card.Body>
                         </Card>
 
