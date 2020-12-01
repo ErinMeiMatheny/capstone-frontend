@@ -4,8 +4,30 @@
 }
 
 .homeContainer{
+    display: grid;
+    justify-content: center;
+
+    width: 95vw;
+    height: 100vh
+}
+.welcomeMessage{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: auto;
+    margin: auto;
+    margin-top: -20px;
+   
+}
+
+#root > div > div.homeContainer.container-fluid > div.welcomeMessage.row > div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 30vw;
+    min-width: 600px;
 }
 
 .homeRow{

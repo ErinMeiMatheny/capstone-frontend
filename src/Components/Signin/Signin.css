@@ -93,9 +93,9 @@
     display: flex;
     justify-content: left;
     min-width: 300px;
-    width: auto !important;
-    width: 800px;
-    height: 60%;
+    width: 20vw;
+    min-width: 500px !important;
+    height: 40%;
 }
 
 /* row */

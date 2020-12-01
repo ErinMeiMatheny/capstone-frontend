@@ -28,25 +28,49 @@ body {
     background-color: white;
   }
 
-  .jobForm-Container{
+  .jobFormContainer{
       display: flex;
-      flex-direction: row; 
+      flex-direction: row;
      
-     
+  
 
-  } 
+  }
+  
+  .mainRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   .jobForm-Row{
       display: flex;
-      /* flex-direction: row;  */
+      flex-direction: row; 
       flex-wrap: wrap;
+
      
   }
 
 .col-cards{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 0.05);
     
 } 
+
+#root > div > div.homeContainer.container-fluid > div.welcomeMessage.row > div.container-fluid > div > div.col-cards.col-8.col > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.inputField{
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
 
 .response {
     font-weight: bold;

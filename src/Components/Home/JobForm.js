@@ -162,10 +162,13 @@ function JobForm() {
     return ["Light"].map((variant, idx) => (
 
 
-        <Row>
+        <Container fluid className="jobFormContainer" style={{ width: "90vw"}}>
+        
+        <Row className="mainRow" style={{width: "90vw"}}>
             {/* <Row className="jobForm-Row"> */}
-            <Col className="col-cards col-8">
-                <Row>
+    
+            <Col md={8} className="col-cards col-8">
+                
                     {
                         jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
                             if (job.is_deleted !== true && job.company_responded !== true)
@@ -240,10 +243,10 @@ function JobForm() {
                                 )
                         })
                     }
-                </Row>
+                
             </Col>
 
-            <Col className="col-4">
+            <Col className="col-4 inputField">
                 <Form className="m-3" onSubmit={handleSubmit}>
                     <Form.Group as={Row} >
                         <Form.Label column sm={2}>
@@ -294,6 +297,7 @@ function JobForm() {
 
             {/* </Row>       */}
         </Row>
+        </Container>
     ))
 
 }

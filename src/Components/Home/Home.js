@@ -34,9 +34,9 @@ export default function Home() {
             <div className="background1" />
             <div className="background2" />
 
-            <Container className="homeContainer">
+            <Container fluid className="homeContainer">
 
-                <Row>
+                <Row className="welcomeMessage">
                     <Card>
                         <Card.Body>
                             <h3 className="text-center"> Welcome Back {currentUser.email}! </h3>
@@ -45,18 +45,15 @@ export default function Home() {
                                 <Button varient="link" onClick={handleLogout}>Log out</Button>
                             </div>
                         </Card.Body>
+
+                        
                     </Card>
+                    <JobForm></JobForm>
+                   
                 </Row>
 
-                <br></br>
-
-
-                <JobForm></JobForm>
-
-                <Row className="homeRow">
-
-
-                </Row>
+                
+                
 
             </Container>
 
