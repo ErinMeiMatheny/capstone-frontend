@@ -130,7 +130,7 @@ function JobForm() {
 
         
         <Container fluid className="jobForm-Container">
-            {/* <Row className="jobForm-Row"> */}
+            <Row className="jobForm-Row">
                 <Col className="col-cards">
                 {
                     jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
@@ -138,7 +138,7 @@ function JobForm() {
 
                             return (
                                 <Col>
-                                    <Card
+                                    <Card 
                                         bg={variant.toLowerCase()}
                                         key={idx}
                                         text={variant.toLowerCase() === "light" ? "dark" : "white"}
@@ -166,8 +166,9 @@ function JobForm() {
                     })
 
                 }
+                
                 </Col>
-                <Col>
+                <Col lg={4}>
                                 <Form className="m-3" onSubmit={handleSubmit}>
                                     <Form.Group as={Row} >
                                         <Form.Label column sm={2}>
@@ -216,7 +217,7 @@ function JobForm() {
              
                 
         
-             {/* </Row>       */}
+             </Row>      
         </Container>
     ))
 
