@@ -1,18 +1,35 @@
 import React from 'react'
 import "./Footer.css"
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
+import interview from "../../assets/interview.png"
 
 
-function Footer() {
+
+function LandingRowThree() {
     return (
         <div >
       
-        <Jumbotron expand="" className="footer-main" style={{backgroundColor: "#696969"}}>
+        <Jumbotron expand="" className="Jumbotron" style={{backgroundColor: "#f1f3f5"}}>
          
-        
-        <Container>
-        
+        <Container className="container">
+        <h1 className="display-4">Why our Job Tracker?</h1>
+           <Row  className="row">
+           
+                <Col sm="4" className="col">
+               <h2 className="headertwo">
+                   Built by students, For students.
+               </h2>
+               <p>
+                   Having gone through our own steps of applying for positions, we found that many lack a clear and easy-to-use tracker to keep them "on track"
+               </p>
+                </Col>
+              
+            </Row> 
         </Container>
+           
+        <img className="LandingRowOne_Image d-none d-lg-block" src={interview} alt="trying to get it to load"/>
+        
+  
 
 
 
@@ -23,4 +40,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default LandingRowThree

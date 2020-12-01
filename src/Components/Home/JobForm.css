@@ -45,8 +45,14 @@ body {
 .col-cards{
     display: flex;
     flex-wrap: wrap;
+   
     
 } 
+
+#root > div > div.homeContainer.container > div:nth-child(3) > div.col-4.col {
+    background-color: white;
+    width: max-content;
+}
 
 .response {
     font-weight: bold;
