@@ -48,5 +48,16 @@ body {
     
 } 
 
+.response {
+    font-weight: bold;
+}
 
+.card-response {
+    text-align: center;
+    background-color: rgba(71,229,188, 0.50);
+}
+
+.card-regular {
+    text-align: center;
+}
  
