@@ -206,7 +206,7 @@ function JobForm() {
                             //renders card with "Company responded!" and turns it a color when company responded is true 
                             if (job.is_deleted !== true && job.company_responded !== false)
                                 return (
-                                    <Col onLoad={replyTimer(job.date_applied, job.id)}>
+                                    <Col >
                                         <Card className="col-2"
                                             bg={variant.toLowerCase()}
                                             key={idx}
@@ -225,7 +225,6 @@ function JobForm() {
                                                     <br></br>
                                                     {job.date_applied}
                                                     <br></br>
-                                                    <p id={job.id}></p>
                                                     <p className="response">Company Responded!</p>
                                                 </Card.Text>
                                                 <DropdownButton id="dropdown-item-button" title="Options">
