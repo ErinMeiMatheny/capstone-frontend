@@ -130,7 +130,7 @@ function JobForm() {
     function replyTimer(dateApplied, cardId) {
 
         // Set the date we're counting down to
-        var countDownDate = new Date(dateApplied).getTime() + 777600000;
+        var countDownDate = new Date(dateApplied).getTime() + 691200000;
 
         var x = setInterval(function () {
             // Get today's date and time
@@ -143,7 +143,7 @@ function JobForm() {
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
             // render how many days left till follow up. If after 7 days since application it will render "Time to follow up with this job!"
-            if (distance < 0) {
+            if (distance < 86400000) {
                 clearInterval(x);
                 document.getElementById(cardId).innerHTML = "Time to follow up with this job!";
             } else {

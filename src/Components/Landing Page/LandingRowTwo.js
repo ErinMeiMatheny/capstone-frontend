@@ -18,7 +18,7 @@ function LandingRowTwo() {
            
                 <Col sm="4" className="col">
                <h2 className="headertwo">
-                   Build by students, For students.
+                   Built by students, For students.
                </h2>
                <p>
                    Having gone through our own steps of applying for positions, we found that many lack a clear and easy-to-use tracker to keep them "on track"

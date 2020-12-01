@@ -66,15 +66,15 @@ function LandingRowOne() {
                    Consistancy
                </h2>
                <p>
-                   Keeping a visable metric will help you stay modivated in your job search
+                   Keeping a visable metric will help you stay motivated in your job search
                </p>
                 </Col>
                 <Col sm="4">
                 <h2 className="headertwo">
-                   Modivation
+                   Motivation
                </h2>
                <p>
-                   Keeping a visable metric will help you stay modivated in your job search
+                   Keeping a visable metric will help you stay motivated in your job search
                </p>
                 </Col>
             </Row> 
