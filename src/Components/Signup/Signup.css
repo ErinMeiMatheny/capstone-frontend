@@ -5,6 +5,7 @@
 .signin-page{
     position: relative;
     background-color: hsla(0,0%,0%, .55);
+    font-size: 3em;
 }
 
 .signinBackground {
@@ -76,7 +77,7 @@
 }
 
 .innerCard{
-    ;
+    width: 100px;
 }
 
 .signinCol{

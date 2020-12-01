@@ -167,7 +167,7 @@ function JobForm() {
         <Row className="mainRow" style={{width: "90vw"}}>
             {/* <Row className="jobForm-Row"> */}
     
-            <Col md={8} className="col-cards col-8">
+            <Col xl={8} lg={8} sm={12} xs={12} className="col-cards">
                 
                     {
                         jobs.sort((a, b) => a.id < b.id ? 1 : -1).map((job) => {
@@ -246,7 +246,7 @@ function JobForm() {
                 
             </Col>
 
-            <Col className="col-4 inputField">
+            <Col xl="auto" lg="auto" md="auto" sm="auto" xs="auto" className=" inputField">
                 <Form className="m-3" onSubmit={handleSubmit}>
                     <Form.Group as={Row} >
                         <Form.Label column sm={2}>
